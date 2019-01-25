@@ -1,5 +1,6 @@
 # Visual Studio 2015 user specific files
 .vs/
+Binaries/*
 
 # Visual Studio 2015 database file
 *.VC.db
@@ -49,8 +50,10 @@ SourceArt/**/*.png
 SourceArt/**/*.tga
 
 # Binary Files
-Binaries/*
-Plugins/*/Binaries/*
+Impstar/Binaries/*
+
+# Plugins Folder
+Plugins/*
 
 # Builds
 Build/*
@@ -71,7 +74,6 @@ Saved/*
 
 # Compiled source files for the engine to use
 Intermediate/*
-Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
