@@ -15,9 +15,6 @@ ASideScrollerPawn::ASideScrollerPawn()
 	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("Flipbook Comp"));
 	FlipbookComp->SetupAttachment(RootComponent);
 
-	//incase we want to check if we're at the apex of the jump
-	GetCharacterMovement()->bNotifyApex = true;
-
 	AnimStateComponent = CreateDefaultSubobject<UAnimationComponent>(TEXT("Animation Component"));
 }
 
@@ -30,18 +27,6 @@ void ASideScrollerPawn::BeginPlay()
 
 void ASideScrollerPawn::MoveRight(float Axis)
 {
-
-	if (Axis < 0)
-	{
-		if (FMath::Abs(FlipbookComp->GetRelativeTransform().GetRotation().Rotator().Yaw) != 180)
-			FlipbookComp->SetRelativeRotation(FRotator(0.0, 180, 0.0));
-	}
-	if (Axis > 0)
-	{
-		if (FMath::Abs(FlipbookComp->GetRelativeTransform().GetRotation().Rotator().Yaw) != 0)
-			FlipbookComp->SetRelativeRotation(FRotator(0.0, 0.0, 0.0));
-	}
-
 	GetMovementComponent()->AddInputVector(FVector(1.0, 0.0, 0.0)* Axis);
 }
 

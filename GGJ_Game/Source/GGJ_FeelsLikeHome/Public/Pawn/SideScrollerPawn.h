@@ -8,6 +8,7 @@
 
 
 class UPaperFlipbookComponent;
+class UAnimationComponent;
 
 UCLASS()
 class GGJ_FEELSLIKEHOME_API ASideScrollerPawn : public ACharacter
@@ -26,6 +27,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Component")
 	UPaperFlipbookComponent* FlipbookComp;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Component")
+	UAnimationComponent* AnimStateComponent;
 
 	void MoveRight(float Axis);
 	void Pawn_Jump();
