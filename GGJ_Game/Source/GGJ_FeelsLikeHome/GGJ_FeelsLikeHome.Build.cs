@@ -8,7 +8,7 @@ public class GGJ_FeelsLikeHome : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Paper2d" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
