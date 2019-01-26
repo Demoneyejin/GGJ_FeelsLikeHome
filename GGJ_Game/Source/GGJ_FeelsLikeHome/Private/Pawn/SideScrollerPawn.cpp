@@ -15,8 +15,7 @@ ASideScrollerPawn::ASideScrollerPawn()
 	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("Flipbook Comp"));
 	FlipbookComp->SetupAttachment(RootComponent);
 
-	//incase we want to check if we're at the apex of the jump
-	GetCharacterMovement()->bNotifyApex = true;
+	
 
 	AnimStateComponent = CreateDefaultSubobject<UAnimationComponent>(TEXT("Animation Component"));
 }
@@ -25,8 +24,10 @@ ASideScrollerPawn::ASideScrollerPawn()
 void ASideScrollerPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	//incase we want to check if we're at the apex of the jump
+	GetCharacterMovement()->bNotifyApex = true;
 }
+	
 
 void ASideScrollerPawn::MoveRight(float Axis)
 {
@@ -48,6 +49,8 @@ void ASideScrollerPawn::MoveRight(float Axis)
 void ASideScrollerPawn::Pawn_Jump()
 {
 	Jump();
+	//incase we want to check if we're at the apex of the jump
+	GetCharacterMovement()->bNotifyApex = true;
 }
 
 // Called every frame
