@@ -9,6 +9,7 @@
 
 class UPaperFlipbookComponent;
 class UAnimationComponent;
+class UArrowComponent;
 
 UCLASS()
 class GGJ_FEELSLIKEHOME_API ASideScrollerPawn : public ACharacter
@@ -29,6 +30,10 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Component")
 	UAnimationComponent* AnimStateComponent;
+
+	//Use this for aiming.
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Component")
+	UArrowComponent* AimingArrow;
 
 	void MoveRight(float Axis);
 	void Pawn_Jump();

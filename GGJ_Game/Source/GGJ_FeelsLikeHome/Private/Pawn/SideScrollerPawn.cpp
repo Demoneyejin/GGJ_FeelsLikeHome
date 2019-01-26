@@ -5,6 +5,7 @@
 #include "PaperFlipbookComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "AnimationComponent.h"
+#include "Components/ArrowComponent.h"
 
 // Sets default values
 ASideScrollerPawn::ASideScrollerPawn()
@@ -15,7 +16,8 @@ ASideScrollerPawn::ASideScrollerPawn()
 	FlipbookComp = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("Flipbook Comp"));
 	FlipbookComp->SetupAttachment(RootComponent);
 
-	
+	AimingArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Aiming Arrow Component"));
+	AimingArrow->SetupAttachment(FlipbookComp);
 
 	AnimStateComponent = CreateDefaultSubobject<UAnimationComponent>(TEXT("Animation Component"));
 }
